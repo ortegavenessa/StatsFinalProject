@@ -1,3 +1,6 @@
+# install neeed packages
+#install.packages(c("ggplot2, car"))
+
 # import finance data
 # finance = read.csv("Finance data Reshaped.csv")
 #A-TEAM
