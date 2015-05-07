@@ -80,29 +80,21 @@ vif(lm(formula = Ozone ~ Solar.R + Temp + Month + Solar.R:Wind, data = airqualit
 #******************************************************************************
 # Verify the CLT
 
-# initilize parameters
-mu = 100; sigma=10
-
-# Create an empty vector of zeros, with 500 ellements
-xbar5 = rep(0, 500)
-# populate the vector by taking 5 samples from the normal population
-for (i in 1:500)
-  xbar5[i] = mean(rnorm(5, mean=mu, sd=sigma))
 # plot a histogram
-hist(xbar5, prob=TRUE, breaks=12, ylim=c(0, 0.5), xlim=c(90, 110), main="500 samplings each w/5 observations")
+hist(rexp(500), breaks=12, main="500 samplings each w/1 observations")
 
 # Create an empty vector of zeros, with 500 ellements
 xbar10 = rep(0, 500)
 # populate the vector by taking 10 samples from the normal population
 for (i in 1:500)
-  xbar10[i] = mean(rnorm(10, mean=mu, sd=sigma))
+  xbar10[i] = mean(rexp(5))
 # plot a histogram
-hist(xbar10, prob=TRUE, breaks=12, ylim=c(0, 0.5), xlim=c(90, 110), main="500 samplings each w/10 observations")
+hist(xbar10, breaks=12, main="500 samplings each w/5 observations")
 
 # Create an empty vector of zeros, with 500 ellements
 xbar111 = rep(0, 500)
 # populate the vector by taking 111 samples from the normal population
 for (i in 1:500)
-  xbar111[i] = mean(rnorm(111, mean=mu, sd=sigma))
+  xbar111[i] = mean(rexp(111))
 # plot a histogram
-hist(xbar111, prob=TRUE, breaks=12, ylim=c(0, 0.5), xlim=c(90, 110), main="500 samplings each w/111 observations")
+hist(xbar111, breaks=12, main="500 samplings each w/111 observations")
